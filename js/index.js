@@ -32,10 +32,8 @@ function searchVideos(e, token) {
     fetch( url )
         .then( response => response.json())
         .then( data => {
-            console.log(data)
             NEXT_TOKEN = data.nextPageToken;
             PREV_TOKEN = data.prevPageToken;
-            console.log(PREV_TOKEN)
             if(NEXT_TOKEN != undefined || NEXT_TOKEN != "")
                 document.querySelector('.next').style.display = "flex";
             else
